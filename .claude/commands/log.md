@@ -1,0 +1,1 @@
+/Users/Kent/Work/Nextedition/work-shell/commands/log.md

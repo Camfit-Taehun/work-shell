@@ -1,0 +1,36 @@
+# work-shell configuration
+
+version: "1.0.0"
+
+# Git integration settings
+git:
+  # Automatically commit session logs on /bye
+  auto_commit: false
+  # Commit message prefix
+  commit_prefix: "chore(work-shell):"
+  # Files to ignore in session summaries
+  ignore_patterns:
+    - "*.log"
+    - "node_modules/**"
+    - ".work-shell/state.json"
+
+# Session settings
+session:
+  # Auto-pause session after N minutes of inactivity (0 = disabled)
+  auto_pause_minutes: 0
+
+# Logging settings
+logging:
+  # Include git status in checkpoints
+  include_git_status: true
+  # Include timestamps in logs
+  include_timestamps: true
+  # Maximum number of sessions to keep in history
+  max_session_history: 50
+
+# Team settings (optional)
+# team:
+#   name: "team-name"
+#   shared_helpers:
+#     remote: "git@github.com:team/helpers.git"
+#     path: ".work-shell/team-helpers"
