@@ -1,0 +1,18 @@
+{
+  "allowedTools": [
+    "Read",
+    "Write",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Bash(git status:*)",
+    "Bash(git branch:*)",
+    "Bash(git log:*)",
+    "Bash(git diff:*)",
+    "Bash(git add:*)",
+    "Bash(git commit:*)",
+    "Bash(date:*)",
+    "Bash(ls:*)",
+    "Bash(mkdir:*)"
+  ]
+}

@@ -1,148 +1,137 @@
 ---
 name: work-shell-core
-description: Use this skill when the user mentions session management, work logging, or uses Korean phrases like "안녕", "바이", "기록". This skill handles work session lifecycle, progress tracking, and context management.
-version: 1.0.0
+description: Use this skill for session management, work logging, todos, commits, and general productivity. Handles Korean phrases like "안녕", "바이", "기록", "상태", "할일".
+version: 2.0.0
 ---
 
-# Work Shell Core Skill
+# Work Shell Core Skill v2.0
 
-This skill manages work session lifecycle and logging for productive development workflows.
+Complete productivity shell for Claude Code with session management, automation, and pipelines.
 
-## Session States
+## Available Commands
 
-Sessions can be in the following states:
-- **inactive**: No active session
-- **active**: Session is running, work in progress
-- **paused**: Session temporarily suspended
+### Core
+- `/hello` - Proactive session start with suggestions
+- `/bye` - Session end with summary
+- `/log` - Quick checkpoint
+- `/status` - Dashboard view
+- `/todo` - Task management
+- `/commit` - Smart git commit
+- `/summary` - Work reports
+
+### Context
+- `/context` - View/edit work-shell.md
+- `/focus` - Set current focus
+- `/decision` - Record decisions
+- `/note` - Long-form notes
+
+### Git
+- `/branch` - Branch management
+- `/pr` - Create PRs
+- `/review` - Code review checklist
+- `/stash` - Smart stash
+
+### Productivity
+- `/find` - Search helpers
+- `/run` - Execute scripts
+- `/timer` - Pomodoro timer
+- `/break` - Take breaks
+
+### Team
+- `/handoff` - Task handoff docs
+- `/share` - Share with team
+- `/sync` - Team sync
+
+### Analysis
+- `/stats` - Work statistics
+- `/retro` - Retrospectives
+- `/history` - Search history
+
+### System
+- `/routine` - Scheduled tasks
+- `/flow` - Command pipelines
+- `/fork` - Session branching
+- `/config` - Settings
 
 ## Session Lifecycle
 
-### Starting a Session (/hello, /안녕)
+```
+[없음] ─/hello─▶ [active]
+                    │
+        ┌───────────┼───────────┐
+        │           │           │
+    /log, /todo   /focus    /break
+        │           │           │
+        └───────────┼───────────┘
+                    │
+                  /bye
+                    │
+                    ▼
+              [completed]
+```
 
-When starting a session:
-
-1. **Load Previous Context**
-   - Check `.work-shell/state.json` for last session info
-   - Load `work-shell.md` for project context
-   - Check for uncommitted changes from previous session
-
-2. **Initialize New Session**
-   - Generate session ID: `YYYY-MM-DD-THHMM`
-   - Record start timestamp
-   - Capture current git branch
-
-3. **Present Context**
-   - Summarize last session if exists
-   - List pending todos
-   - Show current branch and status
-   - Suggest what to work on
-
-### During a Session (/log, /기록)
-
-Quick checkpoints capture:
-- Progress updates
-- Decisions made
-- Important observations
-- Context snapshots
-
-Checkpoints are stored in:
-- `.work-shell/logs/YYYY-MM-DD.md` (daily log)
-- `.work-shell/state.json` (quick_notes array)
-
-### Ending a Session (/bye, /바이)
-
-When ending a session:
-
-1. **Generate Summary**
-   - Calculate session duration
-   - List commits made
-   - Summarize file changes
-   - Compile checkpoint notes
-
-2. **Save Session Log**
-   - Create `.work-shell/sessions/[session-id].md`
-   - Create `.work-shell/sessions/[session-id].json`
-
-3. **Update Project Context**
-   - Update `work-shell.md` with session summary
-   - Record pending todos for next session
-
-4. **Git Integration** (if enabled)
-   - Optionally commit session logs
-   - Use conventional commit format
-
-## Data Formats
-
-### state.json Structure
+## State v2.0 Structure
 
 ```json
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "current_session": {
-    "id": "2026-01-07-T1430",
-    "started": "2026-01-07T14:30:00Z",
+    "id": "2026-01-07-T0115",
+    "started": "2026-01-07T01:15:00+09:00",
     "status": "active",
-    "branch": "main",
-    "quick_notes": []
+    "branch": "master",
+    "focus": "Current task description",
+    "quick_notes": [],
+    "timer": null,
+    "stats": {
+      "commands_run": 0,
+      "commits": 0,
+      "files_changed": 0
+    }
   },
-  "last_session": {
-    "id": "2026-01-06-T1000",
-    "ended": "2026-01-06T12:30:00Z",
-    "summary": "Brief summary of work done",
-    "branch": "feature/auth"
-  },
-  "pending_todos": []
+  "last_session": { ... },
+  "pending_todos": [],
+  "active_routines": [],
+  "active_flows": [],
+  "forks": []
 }
 ```
 
-### Session Log Format
+## Proactive Behavior
 
-Each session log (`.work-shell/sessions/*.md`) contains:
-- Session metadata (time, branch, duration)
-- Work summary
-- Changes made (files, commits)
-- Decisions/notes recorded
-- Next steps/todos
+When starting a session (/hello), proactively:
+1. Check for unmerged remote commits
+2. Show uncommitted local changes
+3. Display pending todos
+4. Suggest actions based on context
+5. Ask user what they want to do
 
-## Directory Structure
-
-When work-shell is active in a project:
+## Directory Structure v2.0
 
 ```
 project/
 ├── .work-shell/
-│   ├── config.yaml      # Local settings
-│   ├── state.json       # Current session state
-│   ├── sessions/        # Session logs
-│   │   ├── 2026-01-07-T1430.md
-│   │   └── 2026-01-07-T1430.json
-│   ├── logs/            # Daily checkpoint logs
-│   │   └── 2026-01-07.md
-│   └── helpers/         # Custom scripts
-└── work-shell.md        # Project context (like CLAUDE.md)
-```
-
-## Configuration
-
-Settings in `.work-shell/config.yaml`:
-
-```yaml
-git:
-  auto_commit: false      # Auto-commit on /bye
-  commit_prefix: "chore(work-shell):"
-
-session:
-  auto_pause_minutes: 30  # Auto-pause after inactivity
-
-logging:
-  include_git_status: true
-  include_timestamps: true
+│   ├── config.yaml
+│   ├── state.json
+│   ├── routines.yaml
+│   ├── flows.yaml
+│   ├── sessions/
+│   ├── logs/
+│   ├── notes/
+│   ├── helpers/
+│   ├── forks/
+│   ├── retros/
+│   ├── handoffs/
+│   └── auto-logs/
+└── work-shell.md
 ```
 
 ## Best Practices
 
-1. Start each work session with `/hello`
-2. Use `/log` frequently to capture decisions
-3. End sessions properly with `/bye`
-4. Keep `work-shell.md` updated with project context
-5. Review pending todos at session start
+1. Start with `/hello` - get context and suggestions
+2. Set `/focus` for the current task
+3. Use `/log` frequently for checkpoints
+4. Use `/decision` for important choices
+5. End with `/bye` to save everything
+6. Use `/routine` for repetitive tasks
+7. Use `/flow` for common sequences

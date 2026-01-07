@@ -1,0 +1,33 @@
+# work-shell routines configuration
+# Add routines with /routine add command
+
+routines: []
+
+# Example routines:
+#
+# - id: morning-status
+#   name: "Morning Status"
+#   description: "Show status every morning"
+#   trigger:
+#     type: cron
+#     schedule: "0 9 * * *"
+#   command: /status
+#   enabled: true
+#
+# - id: auto-checkpoint
+#   name: "Auto Checkpoint"
+#   description: "Log checkpoint every 30 minutes"
+#   trigger:
+#     type: interval
+#     minutes: 30
+#   command: /log 자동체크포인트
+#   enabled: false
+#
+# - id: commit-log
+#   name: "Post-commit Log"
+#   description: "Log after each commit"
+#   trigger:
+#     type: event
+#     event: post-commit
+#   command: /log 커밋완료
+#   enabled: false

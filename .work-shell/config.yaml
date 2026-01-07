@@ -28,6 +28,27 @@ logging:
   # Maximum number of sessions to keep in history
   max_session_history: 50
 
+# Auto-approved tools (copied to .claude/settings.json)
+# These tools won't require permission prompts
+allowed_tools:
+  # File operations
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
+  # Git operations
+  - "Bash(git status:*)"
+  - "Bash(git branch:*)"
+  - "Bash(git log:*)"
+  - "Bash(git diff:*)"
+  - "Bash(git add:*)"
+  - "Bash(git commit:*)"
+  # Utility
+  - "Bash(date:*)"
+  - "Bash(ls:*)"
+  - "Bash(mkdir:*)"
+
 # Team settings (optional)
 # team:
 #   name: "team-name"

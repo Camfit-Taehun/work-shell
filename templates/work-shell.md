@@ -4,7 +4,7 @@
 
 ## Current Focus
 
-<!-- What you're currently working on -->
+<!-- Updated by /focus command -->
 -
 
 ## Progress
@@ -30,6 +30,19 @@
 - Build: `npm run build`
 - Test: `npm test`
 - Docs:
+
+## Useful Commands
+
+```bash
+/hello          # Start session
+/status         # Dashboard
+/todo add X     # Add task
+/focus X        # Set focus
+/log X          # Quick note
+/decision X     # Record decision
+/commit         # Smart commit
+/bye            # End session
+```
 
 ## Session History
 

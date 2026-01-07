@@ -1,6 +1,36 @@
 {
-  "version": "1.0.0",
-  "current_session": null,
-  "last_session": null,
-  "pending_todos": []
+  "version": "2.0.0",
+  "current_session": {
+    "id": "2026-01-07-T1042",
+    "started": "2026-01-07T10:42:00+0900",
+    "status": "active",
+    "branch": "master",
+    "focus": "work-shell 커맨드 테스트",
+    "focus_started": "2026-01-07T09:00:32+0900",
+    "quick_notes": ["08:40 - 커맨드 테스트 시작 - 모든 커맨드 순차 테스트 진행"],
+    "stats": {
+      "commands_run": 0,
+      "commits": 0,
+      "files_changed": 0
+    }
+  },
+  "last_session": {
+    "id": "2026-01-07-T0205",
+    "ended": "2026-01-07T02:05:00+09:00",
+    "summary": "work-shell v2.0 전체 구현 완료",
+    "branch": "master",
+    "commits": 0,
+    "files_changed": 52
+  },
+  "pending_todos": [
+    "실제 Claude Code에서 커맨드 테스트",
+    "Git 자동 커밋 기능 구현",
+    "한국어 별칭 동작 확인"
+  ],
+  "completed_todos": [
+    {"text": "테스트용 할일 항목", "completed": "2026-01-07T08:45:00+0900"}
+  ],
+  "active_routines": [],
+  "active_flows": [],
+  "forks": ["experiment"]
 }

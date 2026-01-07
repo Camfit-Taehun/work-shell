@@ -1,0 +1,22 @@
+{
+  "allowedTools": [
+    "Read",
+    "Write",
+    "Edit",
+    "Glob",
+    "Grep",
+    "Bash(git:*)",
+    "Bash(date:*)",
+    "Bash(ls:*)",
+    "Bash(cat:*)",
+    "Bash(mkdir:*)",
+    "Bash(head:*)",
+    "Bash(tail:*)",
+    "Bash(wc:*)",
+    "Bash(echo:*)",
+    "Bash(touch:*)",
+    "Bash(rm:*)",
+    "Bash(cp:*)",
+    "Bash(mv:*)"
+  ]
+}

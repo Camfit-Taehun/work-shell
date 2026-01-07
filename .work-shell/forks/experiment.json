@@ -1,0 +1,24 @@
+{
+  "id": "experiment",
+  "created": "2026-01-07T02:10:06+0900",
+  "parent_session": "2026-01-07-T0205",
+  "branch": "master",
+  "focus": null,
+  "state_snapshot": {
+    "version": "2.0.0",
+    "current_session": {
+      "id": "2026-01-07-T0205",
+      "started": "2026-01-07T02:05:36+0900",
+      "status": "active",
+      "branch": "master",
+      "focus": null
+    },
+    "pending_todos": [
+      "실제 Claude Code에서 커맨드 테스트",
+      "Git 자동 커밋 기능 구현",
+      "한국어 별칭 동작 확인"
+    ]
+  },
+  "working_directory": "/Users/Kent/Work/Nextedition/work-shell",
+  "status": "active"
+}

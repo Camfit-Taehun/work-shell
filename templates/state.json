@@ -1,6 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "current_session": null,
   "last_session": null,
-  "pending_todos": []
+  "pending_todos": [],
+  "active_routines": [],
+  "active_flows": [],
+  "forks": []
 }

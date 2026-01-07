@@ -1,0 +1,9 @@
+{
+  "name": "work-shell",
+  "version": "0.1.0",
+  "description": "Session management and work logging for Claude Code",
+  "author": "Kent",
+  "commands": "./commands",
+  "skills": "./skills",
+  "hooks": "./hooks/hooks.json"
+}

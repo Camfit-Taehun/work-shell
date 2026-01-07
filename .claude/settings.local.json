@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(log)",
+      "Skill(status)",
+      "Skill(todo)",
+      "Skill(focus)",
+      "Skill(commit)"
+    ]
+  }
+}

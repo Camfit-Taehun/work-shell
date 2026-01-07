@@ -37,4 +37,7 @@
 
 ### Recent Sessions
 
-<!-- Last 3 sessions will be shown here -->
+#### 2026-01-07 01:08 (master)
+- work-shell MVP 첫 테스트 세션
+- Commits: 1, Files: 2
+- Notes: `/hello`, `/log`, `/bye` 동작 확인

@@ -1,0 +1,25 @@
+# work-shell flows configuration
+# Add flows with /flow save command
+
+flows:
+  morning:
+    description: "Morning startup routine"
+    pipeline: "hello -> status"
+
+  deploy:
+    description: "Full deploy pipeline"
+    pipeline: "commit -> pr"
+
+  cleanup:
+    description: "End of day cleanup"
+    pipeline: "summary -> bye"
+
+# Example custom flows:
+#
+# review-and-commit:
+#   description: "Review then commit"
+#   pipeline: "review -> commit -> pr"
+#
+# parallel-checks:
+#   description: "Run checks in parallel"
+#   pipeline: "(test & lint) -> commit"

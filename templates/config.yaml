@@ -1,14 +1,11 @@
-# work-shell configuration
+# work-shell v2.0 configuration
 
-version: "1.0.0"
+version: "2.0.0"
 
 # Git integration settings
 git:
-  # Automatically commit session logs on /bye
   auto_commit: false
-  # Commit message prefix
   commit_prefix: "chore(work-shell):"
-  # Files to ignore in session summaries
   ignore_patterns:
     - "*.log"
     - "node_modules/**"
@@ -16,17 +13,61 @@ git:
 
 # Session settings
 session:
-  # Auto-pause session after N minutes of inactivity (0 = disabled)
   auto_pause_minutes: 0
+  proactive_suggestions: true
 
 # Logging settings
 logging:
-  # Include git status in checkpoints
   include_git_status: true
-  # Include timestamps in logs
   include_timestamps: true
-  # Maximum number of sessions to keep in history
   max_session_history: 50
+  auto_log_interval_minutes: 0  # 0 = disabled, 5 = every 5 min
+
+# Routine settings
+routines:
+  enabled: true
+  check_interval_minutes: 5
+
+# Flow settings
+flows:
+  enabled: true
+  parallel_max: 3
+  background_enabled: true
+
+# Fork settings
+forks:
+  enabled: true
+  terminal_app: "Terminal"  # Terminal, iTerm2, Warp
+
+# Auto-approved tools
+allowed_tools:
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
+  - "Bash(git status:*)"
+  - "Bash(git branch:*)"
+  - "Bash(git log:*)"
+  - "Bash(git diff:*)"
+  - "Bash(git add:*)"
+  - "Bash(git commit:*)"
+  - "Bash(git fetch:*)"
+  - "Bash(git push:*)"
+  - "Bash(git stash:*)"
+  - "Bash(gh:*)"
+  - "Bash(date:*)"
+  - "Bash(ls:*)"
+  - "Bash(mkdir:*)"
+
+# Sharing settings (optional)
+# sharing:
+#   slack:
+#     webhook_url: ""
+#     default_channel: "#dev"
+#   notion:
+#     api_key: ""
+#     database_id: ""
 
 # Team settings (optional)
 # team:

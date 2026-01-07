@@ -1,3 +1,30 @@
 {
-  "hooks": []
+  "hooks": [
+    {
+      "matcher": {
+        "type": "event",
+        "event": "SessionStart"
+      },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "echo 'work-shell: Session started'",
+          "timeout": 5000
+        }
+      ]
+    },
+    {
+      "matcher": {
+        "type": "event",
+        "event": "Stop"
+      },
+      "hooks": [
+        {
+          "type": "command",
+          "command": "echo 'work-shell: Session ended'",
+          "timeout": 5000
+        }
+      ]
+    }
+  ]
 }
