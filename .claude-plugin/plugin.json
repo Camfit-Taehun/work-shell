@@ -1,6 +1,6 @@
 {
   "name": "work-shell",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Session management, work logging, and productivity tools for Claude Code",
   "author": {
     "name": "Kent",
