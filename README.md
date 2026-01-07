@@ -43,7 +43,7 @@ mkdir -p .work-shell/logs .work-shell/sessions
 cp .claude/plugins/work-shell/templates/* .work-shell/
 ```
 
-## 커맨드 목록 (31개)
+## 커맨드 목록 (32개)
 
 ### Core
 | 커맨드 | 설명 |
@@ -80,6 +80,7 @@ cp .claude/plugins/work-shell/templates/* .work-shell/
 | `/ws-fork` | 세션 브랜칭 |
 | `/ws-config` | 설정 관리 |
 | `/ws-update` | 플러그인 자체 업데이트 |
+| `/ws-version` | 플러그인 버전 확인 |
 
 ### Productivity
 | 커맨드 | 설명 |

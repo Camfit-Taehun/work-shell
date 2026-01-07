@@ -49,6 +49,7 @@ REQUIRED_COMMANDS=(
     "ws-commit"
     "ws-title"
     "ws-update"
+    "ws-version"
 )
 
 for cmd in "${REQUIRED_COMMANDS[@]}"; do
