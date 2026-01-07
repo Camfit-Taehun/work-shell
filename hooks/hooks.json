@@ -10,6 +10,11 @@
           "type": "command",
           "command": "echo 'work-shell: Session started'",
           "timeout": 5000
+        },
+        {
+          "type": "command",
+          "command": "BRANCH=$(git branch --show-current 2>/dev/null || echo 'no-git'); D1=$(basename \"$PWD\"); D2=$(basename \"$(dirname \"$PWD\")\"); D3=$(basename \"$(dirname \"$(dirname \"$PWD\")\")\"); printf '\\033]0;[%s] %s/%s/%s\\007' \"$BRANCH\" \"$D3\" \"$D2\" \"$D1\"",
+          "timeout": 5000
         }
       ]
     },
@@ -22,6 +27,11 @@
         {
           "type": "command",
           "command": "echo 'work-shell: Session ended'",
+          "timeout": 5000
+        },
+        {
+          "type": "command",
+          "command": "echo -ne \"\\033]0;\\007\"",
           "timeout": 5000
         }
       ]

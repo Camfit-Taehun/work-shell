@@ -43,7 +43,7 @@ mkdir -p .work-shell/logs .work-shell/sessions
 cp .claude/plugins/work-shell/templates/* .work-shell/
 ```
 
-## 커맨드 목록 (29개)
+## 커맨드 목록 (30개)
 
 ### Core
 | 커맨드 | 설명 |
@@ -87,6 +87,7 @@ cp .claude/plugins/work-shell/templates/* .work-shell/
 | `/run` | 스크립트 실행 |
 | `/timer` | 포모도로 타이머 |
 | `/break` | 휴식 모드 |
+| `/title` | 터미널 타이틀 설정 |
 
 ### Team
 | 커맨드 | 설명 |

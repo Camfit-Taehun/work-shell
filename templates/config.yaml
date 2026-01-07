@@ -39,6 +39,13 @@ forks:
   enabled: true
   terminal_app: "Terminal"  # Terminal, iTerm2, Warp
 
+# Terminal settings
+terminal:
+  auto_title: true          # Set terminal title on session start
+  title_format: "[{branch}] {path}"  # Format: {project}, {branch}, {path}, {focus}, {session}
+  path_depth: 3             # Number of path segments to show (e.g., Work/Nextedition/project)
+  reset_on_bye: true        # Reset title when session ends
+
 # Auto-approved tools
 allowed_tools:
   - Read
