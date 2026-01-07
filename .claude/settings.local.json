@@ -5,7 +5,11 @@
       "Skill(status)",
       "Skill(todo)",
       "Skill(focus)",
-      "Skill(commit)"
+      "Skill(commit)",
+      "Skill(bye)",
+      "Bash(chmod:*)",
+      "Bash(/Users/Kent/Work/Nextedition/work-shell/test.sh)",
+      "Skill(바이)"
     ]
   }
 }

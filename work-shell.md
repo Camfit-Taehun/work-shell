@@ -37,6 +37,16 @@
 
 ### Recent Sessions
 
+#### 2026-01-07 15:31 (master)
+- 한국어 별칭 테스트
+- Commits: 0, Files: 0
+- Notes: /안녕, /기록, /바이 동작 확인 완료
+
+#### 2026-01-07 08:31 (master)
+- work-shell v2.0 커맨드 전체 테스트
+- Commits: 1, Files: 87
+- Notes: 모든 핵심 커맨드 테스트 완료 (/hello, /log, /status, /todo, /focus, /commit, /bye)
+
 #### 2026-01-07 01:08 (master)
 - work-shell MVP 첫 테스트 세션
 - Commits: 1, Files: 2
