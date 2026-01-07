@@ -37,7 +37,7 @@ section() {
 # 1. Command File Structure Tests
 # ═══════════════════════════════════════════════════════
 
-section "1. Command Files (.claude/commands/)"
+section "1. Command Files (commands/)"
 
 REQUIRED_COMMANDS=(
     "hello"
@@ -50,7 +50,7 @@ REQUIRED_COMMANDS=(
 )
 
 for cmd in "${REQUIRED_COMMANDS[@]}"; do
-    if [[ -f ".claude/commands/${cmd}.md" ]]; then
+    if [[ -f "commands/${cmd}.md" ]]; then
         pass "Command exists: ${cmd}.md"
     else
         fail "Command missing: ${cmd}.md"
@@ -67,7 +67,7 @@ KOREAN_ALIASES=(
 )
 
 for alias in "${KOREAN_ALIASES[@]}"; do
-    if [[ -f ".claude/commands/${alias}.md" ]]; then
+    if [[ -f "commands/${alias}.md" ]]; then
         pass "Korean alias exists: ${alias}.md"
     else
         fail "Korean alias missing: ${alias}.md"
@@ -93,7 +93,7 @@ check_frontmatter() {
     fi
 }
 
-for file in .claude/commands/*.md; do
+for file in commands/*.md; do
     if [[ -f "$file" ]]; then
         check_frontmatter "$file"
     fi
@@ -153,10 +153,11 @@ fi
 section "3. Directory Structure"
 
 REQUIRED_DIRS=(
-    ".claude/commands"
-    ".work-shell"
-    ".work-shell/logs"
-    ".work-shell/sessions"
+    ".claude-plugin"
+    "commands"
+    "skills"
+    "hooks"
+    "templates"
 )
 
 for dir in "${REQUIRED_DIRS[@]}"; do
@@ -173,16 +174,16 @@ done
 
 section "4. Plugin Configuration"
 
-if [[ -f "plugin.json" ]]; then
-    pass "plugin.json exists"
+if [[ -f ".claude-plugin/plugin.json" ]]; then
+    pass ".claude-plugin/plugin.json exists"
 
-    if python3 -c "import json; json.load(open('plugin.json'))" 2>/dev/null; then
+    if python3 -c "import json; json.load(open('.claude-plugin/plugin.json'))" 2>/dev/null; then
         pass "plugin.json is valid JSON"
 
         # Check required plugin fields
         if python3 -c "
 import json
-data = json.load(open('plugin.json'))
+data = json.load(open('.claude-plugin/plugin.json'))
 required = ['name', 'version', 'description']
 missing = [f for f in required if f not in data]
 exit(0 if not missing else 1)

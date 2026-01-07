@@ -1,0 +1,23 @@
+# User-specific data (created when plugin is used)
+.work-shell/logs/
+.work-shell/sessions/
+.work-shell/forks/
+.work-shell/state.json
+
+# Local Claude Code settings (project-specific)
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local settings that shouldn't be shared
+.claude/settings.local.json
+*.local.md

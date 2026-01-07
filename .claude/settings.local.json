@@ -9,7 +9,11 @@
       "Skill(bye)",
       "Bash(chmod:*)",
       "Bash(/Users/Kent/Work/Nextedition/work-shell/test.sh)",
-      "Skill(바이)"
+      "Skill(바이)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(tree:*)",
+      "Bash(claude:*)"
     ]
   }
 }

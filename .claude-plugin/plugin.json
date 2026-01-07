@@ -1,8 +1,20 @@
 {
   "name": "work-shell",
-  "version": "0.1.0",
-  "description": "Session management and work logging for Claude Code",
-  "author": "Kent",
+  "version": "2.0.0",
+  "description": "Session management, work logging, and productivity tools for Claude Code",
+  "author": {
+    "name": "Kent",
+    "url": "https://github.com/Kent"
+  },
+  "repository": "https://github.com/Kent/work-shell",
+  "license": "MIT",
+  "keywords": [
+    "session",
+    "logging",
+    "productivity",
+    "workflow",
+    "korean"
+  ],
   "commands": "./commands",
   "skills": "./skills",
   "hooks": "./hooks/hooks.json"
