@@ -13,13 +13,34 @@ work-shell은 Claude Code 위에서 동작하는 생산성 도구입니다:
 
 ## 설치
 
-```bash
-# 프로젝트에 직접 설치
-cp -r work-shell/commands/ your-project/.claude/commands/
-cp -r work-shell/skills/ your-project/.claude/skills/
+### 마켓플레이스에서 설치 (권장)
 
-# 또는 글로벌 설치
-ln -s /path/to/work-shell/commands ~/.claude/commands/work-shell
+```bash
+# 1. 마켓플레이스 추가
+claude plugin marketplace add https://raw.githubusercontent.com/Camfit-Taehun/work-shell/master/marketplace.json
+
+# 2. 플러그인 설치
+claude plugin install work-shell@camfit-plugins
+```
+
+### 수동 설치
+
+```bash
+# Git clone으로 설치
+git clone https://github.com/Camfit-Taehun/work-shell.git .claude/plugins/work-shell
+
+# Claude 실행 (플러그인 로드)
+claude --plugin-dir .claude/plugins/work-shell
+```
+
+### 프로젝트 초기화
+
+설치 후 프로젝트에서 `/hello`를 실행하면 자동으로 초기화됩니다.
+수동 초기화:
+
+```bash
+mkdir -p .work-shell/logs .work-shell/sessions
+cp .claude/plugins/work-shell/templates/* .work-shell/
 ```
 
 ## 커맨드 목록 (29개)
