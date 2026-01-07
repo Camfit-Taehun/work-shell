@@ -1,26 +1,24 @@
 {
   "name": "camfit-plugins",
-  "description": "Camfit's Claude Code Plugin Marketplace",
-  "version": "1.0.0",
-  "author": {
+  "owner": {
     "name": "Camfit-Taehun",
-    "url": "https://github.com/Camfit-Taehun"
+    "email": "camfit@example.com"
   },
-  "plugins": {
-    "work-shell": {
-      "repository": "https://github.com/Camfit-Taehun/work-shell",
+  "plugins": [
+    {
+      "name": "work-shell",
+      "source": {
+        "source": "github",
+        "repo": "Camfit-Taehun/work-shell"
+      },
       "description": "Session management, work logging, and productivity tools for Claude Code",
       "version": "2.0.0",
+      "author": {
+        "name": "Camfit-Taehun"
+      },
+      "license": "MIT",
       "keywords": ["session", "logging", "productivity", "workflow", "korean"],
-      "features": [
-        "32+ slash commands",
-        "Korean language support (/안녕, /기록, /바이)",
-        "Session management with /hello and /bye",
-        "Smart git commits with /commit",
-        "Work logging with /log",
-        "Task management with /todo",
-        "Focus tracking with /focus"
-      ]
+      "homepage": "https://github.com/Camfit-Taehun/work-shell"
     }
-  }
+  ]
 }
