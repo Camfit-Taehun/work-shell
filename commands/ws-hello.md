@@ -34,6 +34,18 @@ Read these files if they exist:
 - `.work-shell/config.yaml` - settings
 - `.work-shell/routines.yaml` - active routines
 
+### Check for Fork Context (IMPORTANT)
+
+Check if there are any fork context files:
+```bash
+ls .claude/fork-*.md 2>/dev/null
+```
+
+If fork context files exist:
+1. Read the fork context file(s)
+2. This session is a **Fork Session** - treat it specially
+3. The fork context contains previous conversation state that should be loaded
+
 ## 3. Analyze Situation
 
 Based on gathered data, determine:
@@ -87,7 +99,41 @@ Create/update `.work-shell/state.json`:
 
 ## 6. Output Greeting
 
-Format your greeting as:
+### If Fork Session (fork context file exists)
+
+```
+## 🔀 Fork 세션 시작: {fork_name}
+
+**{날짜} {시간}** | Branch: `{branch}` | Fork: `{fork_name}`
+
+---
+
+### 📋 이전 세션 컨텍스트 로드됨
+
+**작업 중이던 것**:
+{from context file - what we were working on}
+
+**결정 사항**:
+{from context file - decisions made}
+
+**시도한 것들**:
+{from context file - what was tried}
+
+**현재 이해**:
+{from context file - current understanding}
+
+---
+
+### 🎯 이 Fork의 목적
+{from context file - fork purpose/exploration direction}
+
+---
+
+### 제안
+[AskUserQuestion: "이전 컨텍스트를 바탕으로 바로 시작할까요?" / "컨텍스트에 대해 질문이 있으신가요?" / "다른 방향으로 탐색할까요?"]
+```
+
+### If Normal Session (no fork context)
 
 ```
 ## work-shell 세션 시작
