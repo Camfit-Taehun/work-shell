@@ -23,7 +23,8 @@
       "Bash(gh auth:*)",
       "Bash(curl:*)",
       "WebFetch(domain:docs.claude.com)",
-      "Bash(./test.sh:*)"
+      "Bash(./test.sh:*)",
+      "Bash(./publish.sh:*)"
     ]
   }
 }
