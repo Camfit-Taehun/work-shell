@@ -79,7 +79,7 @@ cp .claude/plugins/work-shell/templates/* .work-shell/
 | `/flow` | 파이프라인 실행 |
 | `/fork` | 세션 브랜칭 |
 | `/config` | 설정 관리 |
-| `/update` | 플러그인 자체 업데이트 |
+| `/ws-update` | 플러그인 자체 업데이트 |
 
 ### Productivity
 | 커맨드 | 설명 |

@@ -48,7 +48,7 @@ REQUIRED_COMMANDS=(
     "focus"
     "commit"
     "title"
-    "update"
+    "ws-update"
 )
 
 for cmd in "${REQUIRED_COMMANDS[@]}"; do
