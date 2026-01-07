@@ -40,14 +40,14 @@ section() {
 section "1. Command Files (commands/)"
 
 REQUIRED_COMMANDS=(
-    "hello"
-    "bye"
-    "log"
-    "status"
-    "todo"
-    "focus"
-    "commit"
-    "title"
+    "ws-hello"
+    "ws-bye"
+    "ws-log"
+    "ws-status"
+    "ws-todo"
+    "ws-focus"
+    "ws-commit"
+    "ws-title"
     "ws-update"
 )
 
